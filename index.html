@@ -3,46 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xuão import</title>
+
+    <title>Login</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="login">
-        <h1>XUÃO IMPORT</h1>
 
-        <input id="usuario" type="text" placeholder="Usuário">
-        <p id="erroUsuario"></p>
+        <h1>Login</h1>
 
-        <input id="senha" type="password" placeholder="Senha">
-        <p id="erroSenha"></p>
+        <form action="sucesso.html">
 
-        <button onclick="login()">Entrar</button>
+            <input
+                type="text"
+                placeholder="Usuário"
+                required
+            >
+
+            <input
+                type="password"
+                placeholder="Senha"
+                required
+            >
+
+            <button type="submit">
+                Entrar
+            </button>
+
+        </form>
+
     </div>
-
-    <script>
-        function login() {
-
-            let usuario = document.getElementById("usuario").value;
-            let senha = document.getElementById("senha").value;
-
-            document.getElementById("erroUsuario").innerHTML = "";
-            document.getElementById("erroSenha").innerHTML = "";
-
-            if (usuario != "xuxu") {
-                document.getElementById("erroUsuario").innerHTML = "Usuário incorreto!";
-            }
-
-            if (senha != "6666") {
-                document.getElementById("erroSenha").innerHTML = "Senha incorreta!";
-            }
-
-            if (usuario == "xuxu" && senha == "6666") {
-                alert("Login realizado!");
-            }
-        }
-    </script>
 
 </body>
 </html>
