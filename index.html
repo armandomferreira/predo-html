@@ -11,15 +11,39 @@
 
     <div class="login">
 
-        <h1>ai</h1>
+        <h1>Login</h1>
 
         <form action="sucesso.html">
 
-            <input type="text" placeholder="Usuário" required>
+            <label>Usuário</label>
 
-            <input type="password" placeholder="Senha" required>
+            <input
+                type="text"
+                placeholder="Digite seu usuário"
+                required
+            >
 
-            <button type="submit">Entrar</button>
+            <p class="erro">
+                Usuário incorreto.
+            </p>
+
+
+            <label>Senha</label>
+
+            <input
+                type="password"
+                placeholder="Digite sua senha"
+                required
+            >
+
+            <p class="erro">
+                Senha incorreta.
+            </p>
+
+
+            <button type="submit">
+                Entrar
+            </button>
 
         </form>
 
@@ -28,3 +52,4 @@
 </body>
 
 </html>
+

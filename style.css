@@ -1,6 +1,6 @@
 body {
     font-family: Arial;
-    background-color: #ff0000;
+    background-color: #eeeeee;
 
     display: flex;
     justify-content: center;
@@ -12,13 +12,25 @@ body {
 .login {
     background-color: white;
 
-    padding: 30px;
-
     width: 300px;
 
-    text-align: center;
+    padding: 30px;
 
     border-radius: 10px;
+
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+
+    text-align: left;
+
+    margin-top: 10px;
 }
 
 input {
@@ -26,7 +38,7 @@ input {
 
     padding: 10px;
 
-    margin: 8px;
+    margin-top: 5px;
 
     border: 1px solid #ccc;
 
@@ -38,7 +50,7 @@ button {
 
     padding: 10px;
 
-    margin-top: 10px;
+    margin-top: 15px;
 
     background-color: #007bff;
 
@@ -53,4 +65,14 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.erro {
+    color: red;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    margin: 5px 0;
 }
