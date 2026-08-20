@@ -3,360 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XUÃO IMPORTS</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-
-        .login-container {
-            width: 380px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-            animation: aparecer 0.7s ease;
-        }
-
-        @keyframes aparecer {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #777;
-            margin-bottom: 30px;
-        }
-
-        .campo {
-            margin-bottom: 20px;
-        }
-
-        .campo label {
-            display: block;
-            margin-bottom: 7px;
-            color: #444;
-            font-weight: bold;
-        }
-
-        .input-box {
-            position: relative;
-        }
-
-        .input-box input {
-            width: 100%;
-            padding: 14px 45px 14px 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            outline: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        .input-box input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
-        }
-
-        .mostrar-senha {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .opcoes {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .lembrar {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-        }
-
-        .opcoes a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .opcoes a:hover {
-            text-decoration: underline;
-        }
-
-        button.entrar {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button.entrar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        button.entrar:active {
-            transform: scale(0.98);
-        }
-
-        .mensagem {
-            display: none;
-            margin-top: 20px;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .erro {
-            display: block;
-            background: #ffe5e5;
-            color: #d93025;
-        }
-
-        .sucesso {
-            display: block;
-            background: #e4f8e8;
-            color: #188038;
-        }
-
-        .cadastro {
-            text-align: center;
-            margin-top: 25px;
-            color: #777;
-            font-size: 14px;
-        }
-
-        .cadastro a {
-            color: #667eea;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .shake {
-            animation: shake 0.4s;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-8px); }
-            75% { transform: translateX(8px); }
-        }
-    </style>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="login-container" id="loginBox">
+    <div class="login">
+        <h1>Login</h1>
 
-        <h1>Bem-vindo</h1>
-        <p class="subtitle">Entre na sua conta</p>
+        <input id="usuario" type="text" placeholder="Usuário">
+        <p id="erroUsuario"></p>
 
-        <form id="loginForm">
+        <input id="senha" type="password" placeholder="Senha">
+        <p id="erroSenha"></p>
 
-            <div class="campo">
-                <label for="usuario">Usuário</label>
-
-                <div class="input-box">
-                    <input
-                        type="text"
-                        id="usuario"
-                        placeholder="Digite seu usuário"
-                    >
-                </div>
-            </div>
-
-            <div class="campo">
-                <label for="senha">Senha</label>
-
-                <div class="input-box">
-                    <input
-                        type="password"
-                        id="senha"
-                        placeholder="Digite sua senha"
-                    >
-
-                    <button
-                        type="button"
-                        class="mostrar-senha"
-                        id="mostrarSenha"
-                    >
-                        
-                    </button>
-                </div>
-            </div>
-
-            <div class="opcoes">
-
-                <label class="lembrar">
-                    <input type="checkbox" id="lembrar">
-                    Lembrar-me
-                </label>
-
-                <a href="#" id="esqueciSenha">
-                    Esqueci a senha
-                </a>
-
-            </div>
-
-            <button type="submit" class="entrar">
-                Entrar
-            </button>
-
-            <div id="mensagem" class="mensagem"></div>
-
-        </form>
-
-        <div class="cadastro">
-            Não possui uma conta?
-            <a href="#">Criar conta</a>
-        </div>
-
+        <button onclick="login()">Entrar</button>
     </div>
 
-
     <script>
-        const form = document.getElementById("loginForm");
-        const usuario = document.getElementById("usuario");
-        const senha = document.getElementById("senha");
-        const mensagem = document.getElementById("mensagem");
-        const loginBox = document.getElementById("loginBox");
-        const mostrarSenha = document.getElementById("mostrarSenha");
-        const esqueciSenha = document.getElementById("esqueciSenha");
+        function login() {
 
+            let usuario = document.getElementById("usuario").value;
+            let senha = document.getElementById("senha").value;
 
-        // Mostrar / esconder senha
-        mostrarSenha.addEventListener("click", () => {
+            document.getElementById("erroUsuario").innerHTML = "";
+            document.getElementById("erroSenha").innerHTML = "";
 
-            if (senha.type === "password") {
-                senha.type = "text";
-                mostrarSenha.textContent = "";
-            } else {
-                senha.type = "password";
-                mostrarSenha.textContent = "";
+            if (usuario != "admin") {
+                document.getElementById("erroUsuario").innerHTML = "Usuário incorreto!";
             }
 
-        });
-
-
-        // Login
-        form.addEventListener("submit", (event) => {
-
-            event.preventDefault();
-
-            mensagem.className = "mensagem";
-            mensagem.textContent = "";
-
-            const usuarioDigitado = usuario.value.trim();
-            const senhaDigitada = senha.value;
-
-            // Validação
-            if (usuarioDigitado === "" || senhaDigitada === "") {
-
-                mensagem.textContent = "Preencha usuário e senha.";
-                mensagem.classList.add("erro");
-
-                loginBox.classList.add("shake");
-
-                setTimeout(() => {
-                    loginBox.classList.remove("shake");
-                }, 400);
-
-                return;
+            if (senha != "1234") {
+                document.getElementById("erroSenha").innerHTML = "Senha incorreta!";
             }
 
-
-            // Exemplo de login
-            if (
-                usuarioDigitado === "admin" &&
-                senhaDigitada === "1234"
-            ) {
-
-                mensagem.textContent = "Login realizado com sucesso!";
-                mensagem.classList.add("sucesso");
-
-                // Simulação de redirecionamento
-                setTimeout(() => {
-                    alert("Bem-vindo, " + usuarioDigitado + "!");
-                }, 800);
-
-            } else {
-
-                mensagem.textContent = "Usuário ou senha incorretos.";
-                mensagem.classList.add("erro");
-
-                loginBox.classList.add("shake");
-
-                setTimeout(() => {
-                    loginBox.classList.remove("shake");
-                }, 400);
+            if (usuario == "admin" && senha == "1234") {
+                alert("Login realizado!");
             }
-
-        });
-
-
-        // Esqueci minha senha
-        esqueciSenha.addEventListener("click", (event) => {
-
-            event.preventDefault();
-
-            mensagem.className = "mensagem sucesso";
-            mensagem.textContent =
-                "Em uma aplicação real, aqui seria iniciado o processo de recuperação da senha.";
-
-        });
-
-
-        // Enter no campo de usuário leva para a senha
-        usuario.addEventListener("keydown", (event) => {
-
-            if (event.key === "Enter") {
-                event.preventDefault();
-                senha.focus();
-            }
-
-        });
+        }
     </script>
 
 </body>

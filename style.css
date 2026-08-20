@@ -1,0 +1,39 @@
+body {
+    background: #667eea;
+    font-family: Arial;
+}
+
+.login {
+    background: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    color: red;
+    font-size: 13px;
+    margin: 5px 0;
+}
