@@ -13,15 +13,28 @@
 
         <h1>ai</h1>
 
-        <form action="sucesso.html">
+<script>
+        function login() {
 
-            <input type="text" placeholder="Usuário" required>
+            let usuario = document.getElementById("usuario").value;
+            let senha = document.getElementById("senha").value;
 
-            <input type="password" placeholder="Senha" required>
+            document.getElementById("erroUsuario").innerHTML = "";
+            document.getElementById("erroSenha").innerHTML = "";
 
-            <button type="submit">Entrar</button>
+            if (usuario != "xuxu") {
+                document.getElementById("erroUsuario").innerHTML = "Usuário incorreto!";
+            }
 
-        </form>
+            if (senha != "6666") {
+                document.getElementById("erroSenha").innerHTML = "Senha incorreta!";
+            }
+
+            if (usuario == "xuxu" && senha == "6666") {
+                alert("Login realizado!");
+            }
+        }
+    </script>
 
     </div>
 
