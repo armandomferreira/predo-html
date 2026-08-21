@@ -1,43 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <title>XUAN</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Login</title>
+                <link rel="stylesheet" href="style.css">
+                </head>
+                <body>
 
-<body>
+                    <div class="login-container">
+                            <h1>Tela de login</h1>
 
-    <div class="login">
+                                    <input type="text" id="usuario" placeholder="Usuário">
+                                            <input type="password" id="senha" placeholder="Senha">
 
-        <h1>ai</h1>
+                                                    <button onclick="login()">Entrar</button>
 
-<script>
-        function login() {
+                                                            <p id="mensagem"></p>
+                                                                </div>
 
-            let usuario = document.getElementById("usuario").value;
-            let senha = document.getElementById("senha").value;
-
-            document.getElementById("erroUsuario").innerHTML = "";
-            document.getElementById("erroSenha").innerHTML = "";
-
-            if (usuario != "xuxu") {
-                document.getElementById("erroUsuario").innerHTML = "Usuário incorreto!";
-            }
-
-            if (senha != "6666") {
-                document.getElementById("erroSenha").innerHTML = "Senha incorreta!";
-            }
-
-            if (usuario == "xuxu" && senha == "6666") {
-                alert("Login realizado!");
-            }
-        }
-    </script>
-
-    </div>
-
-</body>
-
-</html>
+                                                                    <script src="script.js"></script>
+                                                                    </body>
+                                                                    </html>
